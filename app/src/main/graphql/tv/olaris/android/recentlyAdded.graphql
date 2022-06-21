@@ -1,0 +1,34 @@
+query RecentlyAdded {
+    recentlyAdded {
+        ...on Episode{
+            name
+            uuid
+            stillPath
+            files {
+                uuid
+                totalDuration
+            }
+            playState {
+                ...playstateBase
+            }
+            season{
+                name
+                uuid
+                posterPath
+            }
+        }
+        ...on Movie {
+            name
+            uuid
+            posterURL
+            posterPath
+            files {
+                uuid
+                totalDuration
+            }
+            playState {
+                ...playstateBase
+            }
+        }
+    }
+}

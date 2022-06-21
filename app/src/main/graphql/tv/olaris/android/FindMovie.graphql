@@ -1,0 +1,5 @@
+query FindMovie($uuid: String!) {
+    movies(uuid: $uuid) {
+        ...movieBase
+    }
+}

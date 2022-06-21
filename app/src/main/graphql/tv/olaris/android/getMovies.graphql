@@ -1,0 +1,30 @@
+query GetMovies($limit: Int!, $offset: Int!) {
+    movies(limit: $limit, offset: $offset, sort: title){
+        ...movieBase
+    }
+}
+
+query GetSparseMovies($limit: Int!, $offset: Int!) {
+    mediaStats {
+        movieCount
+    }
+    movies(limit: $limit, offset: $offset, sort: title) {
+        name
+        uuid
+        posterURL
+        posterPath
+        files {
+            uuid
+            totalDuration
+        }
+        playState {
+            ...playstateBase
+        }
+    }
+}
+
+query GetMovieTotal {
+    mediaStats {
+        movieCount
+    }
+}

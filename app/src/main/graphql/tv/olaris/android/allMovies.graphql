@@ -1,0 +1,5 @@
+query AllMovies {
+    movies(limit: 999) {
+        ...movieBase
+    }
+}

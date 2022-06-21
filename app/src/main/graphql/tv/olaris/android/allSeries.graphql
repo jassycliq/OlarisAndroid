@@ -1,0 +1,14 @@
+query AllSeries{
+    series(limit: 999){
+          name
+          overview
+          firstAirDate
+          status
+          backdropPath
+          posterPath
+          tmdbID
+          type
+          uuid
+          unwatchedEpisodesCount
+    }
+}

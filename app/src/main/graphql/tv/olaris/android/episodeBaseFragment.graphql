@@ -1,0 +1,15 @@
+fragment episodeBase on Episode {
+
+        name
+        overview
+        stillPath
+        airDate
+        episodeNumber
+        uuid
+        files {
+         ...fileBase
+        }
+    playState{
+    ...playstateBase
+    }
+}

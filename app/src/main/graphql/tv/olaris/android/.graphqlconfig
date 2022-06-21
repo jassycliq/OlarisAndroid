@@ -1,0 +1,16 @@
+{
+  "name": "Untitled GraphQL Schema",
+  "schemaPath": "schema.json",
+  "extensions": {
+    "endpoints": {
+      "Default GraphQL Endpoint": {
+        "url": "http://192.168.1.6:9081/olaris/m/query",
+        "headers": {
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imphc3N5Y2xpcSIsInVzZXJfaWQiOjEsImFkbWluIjp0cnVlLCJleHAiOjE2NTA5NjYzMjMsImlzcyI6ImJzcyJ9.-bNgHMNHqBdjwZVp_im2r4CVwOhlwVCkZMNGydqVNR8",
+          "user-agent": "Android GraphQL"
+        },
+        "introspect": false
+      }
+    }
+  }
+}
