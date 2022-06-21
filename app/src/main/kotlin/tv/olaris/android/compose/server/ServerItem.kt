@@ -72,5 +72,12 @@ fun ServerItem(serverName: String, serverVersion: String) {
     }
 }
 
-    }
+@ExperimentalMaterial3Api
+@Preview("ServerItem")
+@Composable
+fun PreviewServerItem() {
+    ServerItem(
+        serverName = "Test Server",
+        serverVersion = "Best Version",
+    )
 }
