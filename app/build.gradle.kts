@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("plugin.serialization") version "1.6.21"
     id("com.apollographql.apollo3") version "3.3.1"
     id("com.google.devtools.ksp") version "1.6.21-1.0.6"
 }
@@ -21,7 +22,7 @@ android {
             useSupportLibrary = true
         }
         ksp {
-            arg("room.schemaLocation", "$projectDir/schemas".toString())
+            arg("room.schemaLocation", "$projectDir/schemas")
         }
     }
 
@@ -62,7 +63,7 @@ dependencies {
     implementation("androidx.activity:activity-compose:1.4.0")
 
     // Kotlin
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3")
 
     // Okhttp
     implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2")
