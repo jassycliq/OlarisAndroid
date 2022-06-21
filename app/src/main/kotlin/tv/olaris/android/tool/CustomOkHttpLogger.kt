@@ -5,7 +5,7 @@ import okhttp3.Headers
 import okhttp3.Interceptor
 import okhttp3.Response
 import okhttp3.internal.http.promisesBody
-import okhttp3.logging.HttpLoggingInterceptor.*
+import okhttp3.logging.HttpLoggingInterceptor.Level
 import okhttp3.logging.internal.isProbablyUtf8
 import okio.Buffer
 import okio.GzipSource
@@ -18,9 +18,11 @@ import java.util.concurrent.TimeUnit
 
 class CustomHttpLoggingInterceptor : Interceptor {
 
-    @Volatile private var headersToRedact = emptySet<String>()
+    @Volatile
+    private var headersToRedact = emptySet<String>()
 
-    @Volatile var level = Level.NONE
+    @Volatile
+    var level = Level.NONE
 
     fun redactHeader(name: String) {
         val newHeadersToRedact = TreeSet(String.CASE_INSENSITIVE_ORDER)
@@ -86,7 +88,8 @@ class CustomHttpLoggingInterceptor : Interceptor {
                 requestBody.writeTo(buffer)
 
                 val contentType = requestBody.contentType()
-                val charset: Charset = contentType?.charset(StandardCharsets.UTF_8) ?: StandardCharsets.UTF_8
+                val charset: Charset =
+                    contentType?.charset(StandardCharsets.UTF_8) ?: StandardCharsets.UTF_8
 
                 Napier.d("")
                 if (buffer.isProbablyUtf8()) {
@@ -141,7 +144,8 @@ class CustomHttpLoggingInterceptor : Interceptor {
                 }
 
                 val contentType = responseBody.contentType()
-                val charset: Charset = contentType?.charset(StandardCharsets.UTF_8) ?: StandardCharsets.UTF_8
+                val charset: Charset =
+                    contentType?.charset(StandardCharsets.UTF_8) ?: StandardCharsets.UTF_8
 
                 if (!buffer.isProbablyUtf8()) {
                     Napier.d("")

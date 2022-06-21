@@ -1,7 +1,10 @@
 package tv.olaris.android.compose.media.item
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -15,9 +18,9 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import tv.olaris.android.R
+import tv.olaris.android.compose.theme.OlarisTheme
 import tv.olaris.android.data.model.MediaItem
 import tv.olaris.android.data.model.testMovieModel
-import tv.olaris.android.compose.theme.OlarisTheme
 
 @ExperimentalMaterial3Api
 @Composable

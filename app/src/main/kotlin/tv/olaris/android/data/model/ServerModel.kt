@@ -19,5 +19,5 @@ data class Server constructor(
     @ColumnInfo(defaultValue = "false")
     var isOnline: Boolean,
     @PrimaryKey(autoGenerate = true)
-    val id: Int = 0
+    val id: Int = 0,
 )
